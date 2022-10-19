@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
 import FilmList from '../components/FilmList';
+import Basket from '../components/Basket';
+
 
 const FilmContainer = () => {
-  
     const [films, setFilms] = useState ([]);
+    const [selectedFilmId, setSelectedFilmId] = useState("");
 
     useEffect(()=> {
         getFilms();
@@ -16,10 +18,27 @@ const FilmContainer = () => {
         .then(films=>setFilms(films))
     }
 
+    const handleFilmSelected = id => {
+        setSelectedFilmId(id)
+    }
+
+    const handleBasketToggle = (id) => {
+        const updatedFilms = films.map((film) => {
+            return film.id === id
+            ? {...film, isInBasket: !film.isInBasket}
+            : film
+        })
+        setFilms(updatedFilms)
+    }
+
+    const selectedFilm = films.find(film => film.id === selectedFilmId)
+
     return (
+        <>
         <div>
             <FilmList films={films}/>
         </div>
+        </>
     )
 }
 

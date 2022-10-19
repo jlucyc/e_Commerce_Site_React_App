@@ -1,5 +1,5 @@
 import React from "react";
-import ListItem from './ListItem';
+import ListItem from './ListItem'
 
 const FilmList = ({films})  => {
     const filmsItems = films.map((film, index) => {
@@ -8,7 +8,7 @@ const FilmList = ({films})  => {
 
     return (
         <div>
-            <h1>Films</h1>
+            <h1 className="home-heading">Films</h1>
             <ul>
                 {filmsItems}
             </ul>
