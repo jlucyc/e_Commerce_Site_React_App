@@ -2,8 +2,8 @@ import React from "react";
 import ListItem from './ListItem'
 
 const FilmList = ({films})  => {
-    const filmsItems = films.map((film, index) => {
-        return <ListItem film={film} key={index}/>
+    const filmsItems = films.map(film => {
+        return <ListItem film={film} key={film.id}/>
     })
 
     return (
@@ -17,4 +17,5 @@ const FilmList = ({films})  => {
 }
 
 export default FilmList;
+
 

@@ -3,10 +3,12 @@ import React from "react";
 const ListItem = ({film, onBasketToggle}) => {
 
     if (!film) {
-        return null
+        return (
+            <p>You have no items in your basket!</p>
+        )
     }
 
-    const handleClick = () => {
+    const onClick = () => {
         onBasketToggle(film.id)
     }
 
@@ -19,11 +21,12 @@ const ListItem = ({film, onBasketToggle}) => {
         <p>{film.running_time}</p>  
         <p>{film.director}</p>
         {/* <img src={film.image}></img> */}
-        <button onClick={handleClick}>{basketBtnText}</button>
+        <button onClick={onClick}>{basketBtnText}</button>
         </div>
 
     )
 }
 
 export default ListItem;
+
 
