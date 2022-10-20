@@ -7,12 +7,13 @@ const FilmList = ({films})  => {
     })
 
     return (
-        <div>
-            <h1>Films</h1>
+       <wrapper>
+           
             <ul>
                 {filmsItems}
             </ul>
-        </div>
+            </wrapper>
+        
     )
 }
 

@@ -1,15 +1,5 @@
-.App {
-  text-align: center;
-}
 
-.cards {
-  display: inline-block;
-  grid-template-columns: auto, minmax(12rem, 16rem);
-  gap: 2rem;
-  justify-content: center;
-  padding: 2rem;
-  border: 1.5em dashed black;
-}
+
 
 .myButton {
 	box-shadow: 3px 4px 0px 0px #3dc21b;
@@ -25,6 +15,7 @@
 	padding:7px 25px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
+    size-adjust: 1.5em;
 }
 .myButton:hover {
 	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);

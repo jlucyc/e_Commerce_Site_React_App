@@ -1,9 +1,25 @@
 import React, {useState, useEffect} from "react";
 import FilmList from '../components/FilmList';
+import styled from "styled-components";
+
+
+
+// const Title = styled.h2`
+// text-align: center;
+// font-size: 1em;
+// color: #fff;
+// background-color: 062c43;
+// margin: 0;
+// padding: 1em
+
+// `
+
 
 const FilmContainer = () => {
   
     const [films, setFilms] = useState ([]);
+    const [selectedFilmId, setSelectedFilmId] = useState([]);
+
 
     useEffect(()=> {
         getFilms();
@@ -16,10 +32,25 @@ const FilmContainer = () => {
         .then(films=>setFilms(films))
     }
 
+    const handleFilmSelected = id => {
+        setSelectedFilmId(id)
+    }
+
+    const handleBasketToggle = (id) => {
+        const updatedFilms = films.map((film) => {
+            return film.id === id
+            ? {...film, isInBasket: !film.isInBasket}
+            : film
+        })
+        setFilms(updatedFilms)
+    }
+
+    const selectedFilm = films.find(film => film.id === selectedFilmId)
+
     return (
-        <div>
+        <h4>
             <FilmList films={films}/>
-        </div>
+        </h4>
     )
 }
 
