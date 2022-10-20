@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import FilmList from '../components/FilmList';
+<<<<<<< HEAD
 import styled from "styled-components";
 
 
@@ -13,13 +14,19 @@ import styled from "styled-components";
 // padding: 1em
 
 // `
+=======
+import Basket from '../components/Basket';
+>>>>>>> e4935e6a890220eab5239061bcf99904e74d137d
 
 
 const FilmContainer = () => {
-  
     const [films, setFilms] = useState ([]);
+<<<<<<< HEAD
     const [selectedFilmId, setSelectedFilmId] = useState([]);
 
+=======
+    const [selectedFilmId, setSelectedFilmId] = useState("");
+>>>>>>> e4935e6a890220eab5239061bcf99904e74d137d
 
     useEffect(()=> {
         getFilms();
@@ -48,9 +55,17 @@ const FilmContainer = () => {
     const selectedFilm = films.find(film => film.id === selectedFilmId)
 
     return (
+<<<<<<< HEAD
         <h4>
             <FilmList films={films}/>
         </h4>
+=======
+        <>
+        <div>
+            <FilmList films={films}/>
+        </div>
+        </>
+>>>>>>> e4935e6a890220eab5239061bcf99904e74d137d
     )
 }
 
